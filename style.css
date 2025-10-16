@@ -1,0 +1,10 @@
+:root{
+    --primary-color: #684caf;
+    --dark-bg: #111115;
+    --darker-bg: #54545d;
+    --light-text: #e6eef5;
+    --ligth-text: #8c8b8b;
+    --card-bg: #080809;
+    --border-color:#1b1b1c;
+    -o-transition: all 0.3s ease;
+}
