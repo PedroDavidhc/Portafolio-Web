@@ -6,7 +6,10 @@
         <title>Portafolio</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/d807f56ef4.js" crossorigin="anonymous"></script>
-    </head>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        </head>
     <body>
         <header>
             <nav id="navbar">
@@ -21,13 +24,13 @@
 
         <main>
             <section id="inicio" class="hero">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Pedro David Huayanay Cardenas</h1>
-                        <h2>Tecnico Electricista y Telecomunicaciones</h2>
-                        <p>Me gusta adquirir nuevos conocimientos y habilidades para crecer profesionalmente en el campo de la tecnología.</p>
-                    </div>
-                    <div class="social-links">
+                <div class="hero-text">
+                    <h1>Pedro David Huayanay Cardenas</h1>
+                    <h2>Tecnico Electricista y Telecomunicaciones</h2>
+                    <p>Me gusta adquirir nuevos conocimientos y habilidades para crecer profesionalmente en el campo de la tecnología.</p>
+                    <button onclick="saludar(this)">Haz clic para un saludo 👋</button>
+                    
+                    <div class="social-links hero-social-desktop"> 
                         <a href="https://github.com/PedroDavidhc" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/pedro-david-huayanay-cardenas-6a100a29b/" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="https://www.instagram.com/pedrohuayanayc/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -41,7 +44,7 @@
             <section id="experiencia" class="experience">
                 <h2 class="section-title">Experiencia Laboral</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item js-timeline-item">
                         <div class="timeline-content">
                             <span class="date">2023 - Actualidad</span>
                             <h3 class="title">Tecnico Telecomunicaciones</h3>
@@ -54,7 +57,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item js-timeline-item">
                         <div class="timeline-content">
                             <span class="date">2021 - 2023</span>
                             <h3 class="title">Tecnico Telecomunicaciones</h3>
@@ -72,23 +75,23 @@
             </section>
 
             <section id="proyecto" class="projects">
-                <h2>Proyectos personales</h2>
+                <h2 class="section-title">Proyectos personales</h2>
                 <div class="projects-container">
                     <div class="projects-card">
                         <div class="project-image">
                             <img src="imagen02.JPG" alt="Proyecto 1">
-                            <div class="project-info">
-                                <h3>Portafolio web</h3>
-                                <p>Portafolio profesional con el fin de mostrar y promover trabajos realizados en el ámbito de la tecnología.</p>
-                                <div class="project-tech">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/PedroDavidhc/Portafolio-Web.git" target="_blank"><i class="fas fa-link"></i>Demo</a>
-                                    <a href="https://github.com/PedroDavidhc/Portafolio-Web.git" target="_blank"><i class="fab fa-github"></i>Repositorio</a>
-                                </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Portafolio web</h3>
+                            <p>Portafolio profesional con el fin de mostrar y promover trabajos realizados en el ámbito de la tecnología.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/PedroDavidhc/Portafolio-Web.git" target="_blank"><i class="fas fa-link"></i>Demo</a>
+                                <a href="https://github.com/PedroDavidhc/Portafolio-Web.git" target="_blank"><i class="fab fa-github"></i>Repositorio</a>
                             </div>
                         </div>
                     </div>
@@ -106,5 +109,46 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            function saludar(buttonElement) {
+                buttonElement.innerText = '¡Bienvenido a mi portafolio, agradecido con ustedes! 👋';
+                buttonElement.disabled = true;
+            }
+
+            // CÓDIGO JAVASCRIPT PARA ANIMACIONES AVANZADAS (STAGGERING)
+            document.addEventListener('DOMContentLoaded', () => {
+                const timelineItems = document.querySelectorAll('.js-timeline-item');
+                gsap.registerPlugin(ScrollTrigger);
+
+                if (timelineItems.length > 0) {
+                    // Inicializa los elementos como invisibles y ligeramente desplazados
+                    gsap.set(timelineItems, { opacity: 0, y: 50 });
+                    
+                    // Crea la animación de aparición y escalonamiento
+                    gsap.to(timelineItems, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1.0, 
+                        ease: "power2.out",
+                        stagger: 0.25, // Retraso de 0.25 segundos entre cada elemento
+                        
+                        scrollTrigger: {
+                            trigger: "#experiencia",
+                            start: "top 80%", // Dispara cuando la sección entra en la vista
+                        }
+                    });
+                }
+
+                // Animación de la barra de navegación al cargar
+                gsap.from("#navbar", {
+                    y: -100,
+                    opacity: 0,
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: "power2.out"
+                });
+            });
+        </script>
     </body>
 </html>
