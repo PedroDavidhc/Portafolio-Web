@@ -1,16 +1,15 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portafolio</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css"> 
         <script src="https://kit.fontawesome.com/d807f56ef4.js" crossorigin="anonymous"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-        </head>
+    </head>
     <body>
         <header>
             <nav id="navbar">
@@ -38,7 +37,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="Perfil1.JPG" alt="imagen de perfil">
+                    <img src="Perfil1.JPG" alt="imagen de perfil"> 
                 </div>
             </section>
 
@@ -80,7 +79,7 @@
                 <div class="projects-container">
                     <div class="projects-card">
                         <div class="project-image">
-                            <img src="imagen02.JPG" alt="Proyecto 1">
+                            <img src="imagen02.JPG" alt="Proyecto 1"> 
                         </div>
                         <div class="project-info">
                             <h3>Portafolio web</h3>
@@ -117,7 +116,51 @@
                 buttonElement.disabled = true;
             }
 
-            // CÓDIGO JAVASCRIPT PARA ANIMACIONES AVANZADAS (STAGGERING)
+            // ===============================================
+            // 🚀 ESTRUCTURAS REPETITIVAS AGREGADAS (JavaScript)
+            // ===============================================
+
+            // 1. Recorrer y actualizar los elementos de la lista de habilidades (Bucle forEach)
+            document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                // Para cada item de la experiencia, encontramos la lista de habilidades
+                const skillsList = item.querySelector('.skills');
+                if (skillsList) {
+                    // Obtenemos todos los <li> dentro de la lista de habilidades
+                    const skills = skillsList.querySelectorAll('li');
+                    
+                    // Usamos forEach para iterar sobre cada habilidad (estructura repetitiva)
+                    skills.forEach((skill) => {
+                        // Modifica el texto en el DOM añadiendo un check al inicio
+                        const originalText = skill.textContent;
+                        skill.textContent = `✅ ${originalText}`; 
+                    });
+                }
+            });
+
+            // 2. Iterar sobre los enlaces de la navegación y aplicar un efecto (Bucle for)
+            const navLinks = document.querySelectorAll('#navbar ul li a');
+            const numLinks = navLinks.length;
+
+            // Usamos un bucle for tradicional (estructura repetitiva)
+            for (let i = 0; i < numLinks; i++) {
+                const link = navLinks[i];
+                
+                // Asignar un evento click a cada enlace
+                link.addEventListener('click', (event) => {
+                    // Aplicar una animación temporal al hacer clic usando GSAP
+                    gsap.to(event.target, { 
+                        scale: 1.1, 
+                        duration: 0.15, 
+                        yoyo: true, // Vuelve al estado original
+                        repeat: 1, // Repite una vez (total de 2 veces la animación)
+                        ease: "power1.inOut" 
+                    });
+                });
+            }
+
+            // ===============================================
+            // 🎨 CÓDIGO JAVASCRIPT PARA ANIMACIONES (GSAP)
+            // ===============================================
             document.addEventListener('DOMContentLoaded', () => {
                 const timelineItems = document.querySelectorAll('.js-timeline-item');
                 gsap.registerPlugin(ScrollTrigger);

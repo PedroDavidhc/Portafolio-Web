@@ -1,11 +1,11 @@
 /* Variables de color - Paleta limpia y profesional */
 :root {
-    --primary-color: #007bff; /* Azul para CTAs y Highlights */
-    --secondary-color: #6c757d; /* Gris oscuro/secundario */
-    --background-color: #f8f9fa; /* Fondo blanco roto */
-    --card-background: #ffffff; /* Blanco puro para tarjetas */
-    --text-color: #212529; /* Negro suave para cuerpo de texto */
-    --heading-color: #000000; /* Negro fuerte para títulos */
+    --primary-color: #007bff; 
+    --secondary-color: #6c757d; 
+    --background-color: #f8f9fa;
+    --card-background: #ffffff; 
+    --text-color: #212529; 
+    --heading-color: #000000; 
     --white-color: #ffffff;
     
     /* Variables de Animación */
@@ -91,9 +91,9 @@ header {
     padding: 8px 15px; 
 }
 
-/* --- HERO SECTION (INICIO) - Layout con Flexbox --- */
+
 .hero {
-    background: linear-gradient(135deg, #e9f5ff, #ffffff); /* Fondo muy suave */
+    background: linear-gradient(135deg, #e9f5ff, #ffffff); 
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -204,7 +204,7 @@ header {
 }
 
 
-/* --- SECCIÓN EXPERIENCIA (TIMELINE) - Estilo de línea de tiempo con puntos --- */
+
 .experience {
     background-color: var(--background-color);
 }
@@ -216,7 +216,7 @@ header {
     padding-left: 30px; 
 }
 
-/* Línea Vertical */
+
 .timeline::before {
     content: '';
     position: absolute;
@@ -227,7 +227,7 @@ header {
     bottom: 0;
 }
 
-/* Ítem de la línea de tiempo. GSAP controlará la aparición. */
+
 .timeline-item {
     padding: 10px 0 30px 40px; 
     position: relative;
@@ -236,7 +236,7 @@ header {
     transform: translateY(50px); 
 }
 
-/* Punto de la línea de tiempo (el círculo) */
+
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -244,7 +244,7 @@ header {
     height: 15px;
     border-radius: 50%;
     background-color: var(--primary-color);
-    border: 3px solid var(--card-background); /* Borde con el color del fondo de la sección */
+    border: 3px solid var(--card-background); 
     left: 3px;
     top: 18px;
     z-index: 1;
