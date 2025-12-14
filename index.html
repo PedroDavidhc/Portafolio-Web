@@ -1,45 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portafolio</title>
-        <link rel="stylesheet" href="style.css"> 
-        <script src="https://kit.fontawesome.com/d807f56ef4.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <nav id="navbar">
-                <div class="logo">Pedro <span>David</span></div>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#proyecto">Proyecto</a></li>
-                </ul>
-            </nav>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Pedro David</title>
+    <!-- AQUÍ: CSS en la misma carpeta -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d807f56ef4.js" crossorigin="anonymous"></script>
+</head>
 
-        <main>
-            <section id="inicio" class="hero">
-                <div class="hero-text">
-                    <h1>Pedro David Huayanay Cardenas</h1>
-                    <h2>Tecnico Electricista y Telecomunicaciones</h2>
-                    <p>Me gusta adquirir nuevos conocimientos y habilidades para crecer profesionalmente en el campo de la tecnología.</p>
-                    <button onclick="saludar(this)">Haz clic para un saludo 👋</button>
-                    
-                    <div class="social-links hero-social-desktop"> 
-                        <a href="https://github.com/PedroDavidhc" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/pedro-david-huayanay-cardenas-6a100a29b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/pedrohuayanayc/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
+<body>
+    <!-- Header con navegación -->
+    <header>
+    <nav id="navbar">
+        <div class="logo">Pedro <span>David</span></div>
+
+        <!-- Botón hamburguesa -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#proyecto">Proyecto</a></li>
+            <li><a href="#" id="btn-contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <!-- Sección Hero (Inicio) -->
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-text">
+                <h1>Pedro David Huayanay Cardenas</h1>
+                <h2>Tecnico Electricista y Telecomunicaciones</h2>
+                <p>Me gusta adquirir nuevos conocimientos y habilidades para crecer profesionalmente en el campo de la tecnología.</p>
+                <button onclick="saludar(this)">Haz clic para un saludo 👋</button>
+
+                <div class="social-links hero-social-desktop">
+                    <a href="https://github.com/PedroDavidhc" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/pedro-david-huayanay-cardenas-6a100a29b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/pedrohuayanayc/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="hero-image">
-                    <img src="Perfil1.JPG" alt="imagen de perfil"> 
-                </div>
-            </section>
+            </div>
+            <div class="hero-image">
+                <img src="Perfil1.JPG" alt="imagen de perfil">
+            </div>
+        </section>
+
+        <!-- Experiencia -->
 
             <section id="experiencia" class="experience">
                 <h2 class="section-title">Experiencia Laboral</h2>
@@ -73,126 +83,58 @@
                     </div>
                 </div>
             </section>
-
-            <section id="proyecto" class="projects">
-                <h2 class="section-title">Proyectos personales</h2>
-                <div class="projects-container">
-                    <div class="projects-card">
-                        <div class="project-image">
-                            <img src="imagen02.JPG" alt="Proyecto 1"> 
+        <!-- Proyectos -->
+        <section id="proyecto" class="projects">
+            <h2 class="section-title">Proyectos personales</h2>
+            <div class="projects-container">
+                <div class="projects-card">
+                    <div class="project-image">
+                        <img src="imagen02.JPG" alt="Proyecto 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Portafolio web</h3>
+                        <p>Portafolio profesional con el fin de mostrar y promover trabajos realizados en el ámbito de la tecnología.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
                         </div>
-                        <div class="project-info">
-                            <h3>Portafolio web</h3>
-                            <p>Portafolio profesional con el fin de mostrar y promover trabajos realizados en el ámbito de la tecnología.</p>
-                            <div class="project-tech">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/PedroDavidhc/Portafolio-Web.git" target="_blank"><i class="fas fa-link"></i>Demo</a>
-                                <a href="https://github.com/PedroDavidhc/Portafolio-Web.git" target="_blank"><i class="fab fa-github"></i>Repositorio</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="https://github.com/PedroDavidhc/Portafolio-Web.git" target="_blank"><i class="fas fa-link"></i>Demo</a>
+                            <a href="https://github.com/PedroDavidhc/Portafolio-Web.git" target="_blank"><i class="fab fa-github"></i>Repositorio</a>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <p>&copy; 2025 Pedro David Huayanay Cardenas. Todos los derechos reservados.</p>
-                <div class="project-links">
-                    <a href="https://github.com/PedroDavidhc" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/pedro-david-huayanay-cardenas-6a100a29b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/pedrohuayanayc/" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
             </div>
-        </footer>
+        </section>
+    </main>
 
-        <script>
-            function saludar(buttonElement) {
-                buttonElement.innerText = '¡Bienvenido a mi portafolio, agradecido con ustedes! 👋';
-                buttonElement.disabled = true;
-            }
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Pedro David Huayanay Cardenas. Todos los derechos reservados.</p>
+            <div class="project-links">
+                <a href="https://github.com/PedroDavidhc" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/pedro-david-huayanay-cardenas-6a100a29b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/pedrohuayanayc/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+        <!-- Modal de contacto -->
+    <div class="modal" id="modal-contacto">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
 
-            // ===============================================
-            // 🚀 ESTRUCTURAS REPETITIVAS AGREGADAS (JavaScript)
-            // ===============================================
+            <h2>Contacto</h2>
 
-            // 1. Recorrer y actualizar los elementos de la lista de habilidades (Bucle forEach)
-            document.querySelectorAll('.timeline-item').forEach((item, index) => {
-                // Para cada item de la experiencia, encontramos la lista de habilidades
-                const skillsList = item.querySelector('.skills');
-                if (skillsList) {
-                    // Obtenemos todos los <li> dentro de la lista de habilidades
-                    const skills = skillsList.querySelectorAll('li');
-                    
-                    // Usamos forEach para iterar sobre cada habilidad (estructura repetitiva)
-                    skills.forEach((skill) => {
-                        // Modifica el texto en el DOM añadiendo un check al inicio
-                        const originalText = skill.textContent;
-                        skill.textContent = `✅ ${originalText}`; 
-                    });
-                }
-            });
+            <p><strong>WhatsApp:</strong> 994281665</p>
+            <p><strong>Correo:</strong> pedro_davidhc@hotmail.com</p>
 
-            // 2. Iterar sobre los enlaces de la navegación y aplicar un efecto (Bucle for)
-            const navLinks = document.querySelectorAll('#navbar ul li a');
-            const numLinks = navLinks.length;
+            <a href="https://wa.me/51994281665" target="_blank" class="btn-wsp">Escribir por WhatsApp</a>
+            <a href="mailto:pedro_davidhc@hotmail.com" class="btn-mail">Enviar correo</a>
+        </div>
+    </div>
 
-            // Usamos un bucle for tradicional (estructura repetitiva)
-            for (let i = 0; i < numLinks; i++) {
-                const link = navLinks[i];
-                
-                // Asignar un evento click a cada enlace
-                link.addEventListener('click', (event) => {
-                    // Aplicar una animación temporal al hacer clic usando GSAP
-                    gsap.to(event.target, { 
-                        scale: 1.1, 
-                        duration: 0.15, 
-                        yoyo: true, // Vuelve al estado original
-                        repeat: 1, // Repite una vez (total de 2 veces la animación)
-                        ease: "power1.inOut" 
-                    });
-                });
-            }
-
-            // ===============================================
-            // 🎨 CÓDIGO JAVASCRIPT PARA ANIMACIONES (GSAP)
-            // ===============================================
-            document.addEventListener('DOMContentLoaded', () => {
-                const timelineItems = document.querySelectorAll('.js-timeline-item');
-                gsap.registerPlugin(ScrollTrigger);
-
-                if (timelineItems.length > 0) {
-                    // Inicializa los elementos como invisibles y ligeramente desplazados
-                    gsap.set(timelineItems, { opacity: 0, y: 50 });
-                    
-                    // Crea la animación de aparición y escalonamiento
-                    gsap.to(timelineItems, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 1.0, 
-                        ease: "power2.out",
-                        stagger: 0.25, // Retraso de 0.25 segundos entre cada elemento
-                        
-                        scrollTrigger: {
-                            trigger: "#experiencia",
-                            start: "top 80%", // Dispara cuando la sección entra en la vista
-                        }
-                    });
-                }
-
-                // Animación de la barra de navegación al cargar
-                gsap.from("#navbar", {
-                    y: -100,
-                    opacity: 0,
-                    duration: 0.8,
-                    delay: 0.5,
-                    ease: "power2.out"
-                });
-            });
-        </script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
